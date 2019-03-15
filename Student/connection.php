@@ -22,9 +22,13 @@
         $msg = "SRM Institute of Science and Technology\n\nStudent E-Tutor Platform\nPassword: ".$sql;
         mail($name, $sub, $msg, $header);
         echo "Password Send To The Email<br>Check It And Login Again";
+        sleep(10);
+        require_once("Student-log.html");
     }
     else {
         echo "No Such Email Is Present In The database<br>Either Try Again Or Register First";
+        sleep(10);
+        require_once("Student-log.html");
     }
 
     $conn->close();
