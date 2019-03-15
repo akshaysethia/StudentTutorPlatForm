@@ -10,7 +10,7 @@
     $dbhost = "localhost";
     $dbname = "root";
     $dbcode = "";
-    $dbtab = "SRM";
+    $dbtab = "srm";
 
     $conn = new mysqli($dbhost, $dbname, $dbcode, $dbtab);
 
@@ -18,7 +18,7 @@
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "INSERT INTO studentreg VALUES('$name','$regno','$year','$sec','$subject','$mail','$password')";
+    $sql = "INSERT INTO student VALUES('$name','$regno','$year','$sec','$subject','$mail','$password')";
 
     if($conn->query($sql)){
         require_once("Student-log.html");
