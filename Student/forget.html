@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRMIST :: Forgot Password</title>
+    <link rel="stylesheet" type="text/css" href="/CSS/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/CSS/fontawesome-all.min.css">
+    <link rel="stylesheet" type="text/css" href="/CSS/style.css">
+    <link rel="stylesheet" type="text/css" href="/CSS/forget.css">
+</head>
+
+<body>
+    <div class="form-body">
+        <div class="website-logo">
+            <a href="/index.html">
+                <div class="logo">
+                    <img class="logo" height="50" width="100" src="/Images/logo.png" alt="">
+                </div>
+            </a>
+        </div>
+        <div class="row">
+            <div class="img-holder">
+                <div class="bg"></div>
+                <div class="info-holder">
+                    <img src="/Images/graphic3.svg" alt="">
+                </div>
+            </div>
+            <div class="form-holder">
+                <div class="form-content">
+                    <div class="form-items">
+                        <h3>Password Reset</h3>
+                        <p>To reset your password, enter the email address you use to sign in to SRMIST</p>
+                        <form method="POST" action="connection.php">
+                            <input class="form-control" type="text" name="username" placeholder="E-mail Address"
+                                required>
+                            <div class="form-button full-width">
+                                <button id="submit" type="submit" class="ibtn btn-forget">Send Reset Link</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/JS/jquery.min.js"></script>
+    <script src="/JS/popper.min.js"></script>
+    <script src="/JS/bootstrap.min.js"></script>
+    <script src="/JS/main.js"></script>
+</body>
+
+
+</html>
