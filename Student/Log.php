@@ -20,10 +20,12 @@
         $result2 = mysql_query("SELECT username FROM student WHERE password = '".$pass."'");
 
         if($name == $result1 && $pass == $result2){
-            require("index.html");
+            require_once("index.html");
         }
         else{
             echo "<script type='text/javascript'>alert('$shit');</script>";
+            sleep(10);
+            require_once)("Student-log.html");
         }
     }
 

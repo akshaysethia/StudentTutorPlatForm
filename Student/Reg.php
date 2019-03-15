@@ -25,6 +25,8 @@
     }
     else {
         echo "Error: ".$sql."<br>".$conn->error;
+        sleep(10);
+        require_once("Student-reg.html");
     }
 
     $conn->close();
