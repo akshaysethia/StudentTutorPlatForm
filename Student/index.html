@@ -23,7 +23,6 @@
 <body>
     <?php
         $name = $_SESSION['var'];
-        session_abort();
     ?>
     <div class="wrapper">
         <div class="sidebar" data-color="purple" data-image="">
@@ -107,12 +106,12 @@
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
                             <li>
-                                <a href="">
+                                <a href="/../SRM/Student/user.html">
                                     <p>Account</p>
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="/../SRM/Student/Student-log.html">
                                     <p>Log out</p>
                                 </a>
                             </li>
@@ -125,7 +124,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <h4 class="title" style="text-align: center;">Welcome to Student Tutor Portal</h4>
-                        <p class="category" style="text-align: center;"> <?php echo $name; ?> Dashboard</p>
+                        <p class="category" style="text-align: center;"> <?php echo $name; ?>'s Dashboard</p>
                     </div>
                 </div>
             </div>
