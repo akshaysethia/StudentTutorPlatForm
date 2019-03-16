@@ -16,16 +16,15 @@
 
     if(isset($name,$pass)){
 
-        $result1 = mysql_query("SELECT regno FROM student WHERE username = '".$name."'");
-        $result2 = mysql_query("SELECT username FROM student WHERE password = '".$pass."'");
+        $result = "SELECT password FROM student WHERE regno = '$name'";
 
-        if($name == $result1 && $pass == $result2){
+        if($pass == $result){
             require_once("index.html");
         }
         else{
             echo "<script type='text/javascript'>alert('$shit');</script>";
             sleep(10);
-            require_once)("Student-log.html");
+            require_once("Student-log.html");
         }
     }
 
