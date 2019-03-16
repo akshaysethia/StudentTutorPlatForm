@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/png" href="/../SRM/Images/favicon.PNG">
@@ -21,8 +20,11 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="http://herody.in/dash/tutor/assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
 </head>
-
 <body>
+    <?php
+        $name = $_SESSION['var'];
+        session_abort();
+    ?>
     <div class="wrapper">
         <div class="sidebar" data-color="purple" data-image="">
             <div class="sidebar-wrapper">
@@ -123,7 +125,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <h4 class="title" style="text-align: center;">Welcome to Student Tutor Portal</h4>
-                        <p class="category" style="text-align: center;">Student Dashboard</p>
+                        <p class="category" style="text-align: center;"> <?php echo $name; ?> Dashboard</p>
                     </div>
                 </div>
             </div>

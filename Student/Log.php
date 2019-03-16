@@ -1,4 +1,5 @@
 <?php
+    session_start();
     $name = filter_input(INPUT_POST, 'Username');
     $pass = filter_input(INPUT_POST, 'password');
     $shit = "Wrong Username Or Password";
@@ -14,19 +15,25 @@
         die("Connection failed: " . $conn->connect_error);
     }
 
-    if(isset($name,$pass)){
+    $sql = "SELECT name,password FROM student WHERE regno='$name'";
 
-        $result = "SELECT password FROM student WHERE regno = '$name'";
-
-        if($pass == $result){
-            require_once("index.html");
-        }
-        else{
-            echo "<script type='text/javascript'>alert('$shit');</script>";
-            sleep(10);
-            require_once("Student-log.html");
+    $result = $conn->query($sql);
+    
+    if($result->num_rows>0) {
+        while($row = $result->fetch_assoc()) {
+            $stud = $row["name"];
+            $value = $row["password"];
         }
     }
 
+    if($pass == $value) {
+        $_SESSION['var'] = $stud;
+        require_once("index.html");
+    }
+    else {
+        echo "<script type='text/javascript'>alert('$shit');</script>";
+        sleep(10);
+        require_once("Student-log.html");
+    }
     $conn->close();
 ?>

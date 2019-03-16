@@ -1,9 +1,9 @@
 <?php
     $name = filter_input(INPUT_POST, 'name');
     $regno = filter_input(INPUT_POST, 'Register_Number');
-    $year = filter_input(INPUT_POST, 'year');
-    $sec = filter_input(INPUT_POST, 'sec');
-    $subject = filter_input(INPUT_POST, 'subject');
+    $year = filter_input(INPUT_POST, 'Year');
+    $sec = filter_input(INPUT_POST, 'Sec');
+    $subject = filter_input(INPUT_POST, 'Sub');
     $mail = filter_input(INPUT_POST, 'email');
     $password = filter_input(INPUT_POST, 'password');
 
