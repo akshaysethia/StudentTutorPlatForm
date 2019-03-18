@@ -16,7 +16,7 @@
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "INSERT INTO tutor VALUES('$name','$regno','$subject','$email','$password')";
+    $sql = "INSERT INTO tutor VALUES('$name','$regno','$subject','$mail','$password')";
 
     if($conn->query($sql)){
          require_once("Tutor-log.html");

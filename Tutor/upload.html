@@ -2,50 +2,53 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<link rel="icon" type="image/png" href="assets/img/favicon.ico">
+	<link rel="icon" type="image/png" href="/../SRM/Images/favicon.PNG">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-
 	<title>Attendance</title>
-
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
-
-
     <!-- Bootstrap core CSS     -->
     <link href="http://herody.in/dash/tutor/assets/css/bootstrap.min.css" rel="stylesheet" />
-
     <!-- Animation library for notifications   -->
     <link href="http://herody.in/dash/tutor/assets/css/animate.min.css" rel="stylesheet"/>
-
     <!--  Light Bootstrap Table core CSS    -->
     <link href="http://herody.in/dash/tutor/assets/css/light-bootstrap-dashboard.css?v=1.4.0" rel="stylesheet"/>
-
-<link href="http://herody.in/dash/tutor/assets/css/jquery.dataTables.min.css" rel="stylesheet"/>
+    <link href="http://herody.in/dash/tutor/assets/css/jquery.dataTables.min.css" rel="stylesheet"/>
     <link href="http://herody.in/dash/tutor/assets/css/responsive.dataTables.min.css"/>
     <!--  CSS for Demo Purpose, don't include it in your project     -->
     <link href="http://herody.in/dash/tutor/assets/css/demo.css" rel="stylesheet" />
-
-
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="http://herody.in/dash/tutor/assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
 </head>
 <body>
+    <?php
+        $tut = $_SESSION['var'];
+        $val1 = $_SESSION['var1'];
+        $dbhost = "localhost";
+        $dbuser = "root";
+        $dbpass = "";
+        $dbname = "srm";
 
+        $conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+
+        $sql = "SELECT regno FROM student WHERE regno='$val1'";
+
+        $result = $conn->query($sql);
+    ?>
 <div class="wrapper">
     <div class="sidebar" data-color="purple" data-image="assets/img/sidebar-5.jpg">
-
-
-
-
     	<div class="sidebar-wrapper">
             <div class="logo">
                 <a href="#" class="simple-text">
                    Student-Tutor
                 </a>
             </div>
-
             <ul class="nav">
                 <li>
                     <a href="http://herody.in/dash/tutor/index.html">
@@ -71,12 +74,9 @@
                         <p>Courses</p>
                     </a>
                 </li>
-                
-
             </ul>
     	</div>
     </div>
-
     <div class="main-panel">
 		<nav class="navbar navbar-default navbar-fixed">
             <div class="container-fluid">
@@ -165,6 +165,8 @@
 											</thead>
 											<tbody>
 												<tr>
+                                                    <?php
+                                                        
 													<td>RA1611003040100</td>
 													<td>Student 1</td>
 													<td>Theory of Computation</td>
@@ -175,42 +177,6 @@
 														</select>
 													</td>
 												
-												</tr>
-												<tr>
-													<td>RA1511003040100</td>
-													<td>Student 2</td>
-													<td>Operating Systems</td>
-													<td>
-														<select class="datatable-select">
-															<option>Present</option>
-															<option>Absent</option>
-														</select>
-													</td>
-													
-												</tr>
-												<tr>
-													<td>RA1511003040103</td>
-													<td>Student 3</td>
-													<td>Java Programming</td>
-													<td>
-														<select class="datatable-select">
-															<option>Present</option>
-															<option>Absent</option>
-														</select>
-													</td>
-													
-												</tr>
-												<tr>
-													<td>RA1511003040200</td>
-													<td>Student 4</td>
-													<td>Compiler Design</td>
-													<td>
-														<select class="datatable-select">
-															<option>Present</option>
-															<option>Absent</option>
-														</select>
-													</td>
-													
 												</tr>
 											</tbody>
 										</table>
