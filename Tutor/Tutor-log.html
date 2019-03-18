@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tutor :: Login</title>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/fontawesome-all.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/Tutor.css">
+    <link rel="stylesheet" type="text/css" href="/../SRM/CSS/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/../SRM/CSS/fontawesome-all.min.css">
+    <link rel="stylesheet" type="text/css" href="/../SRM/CSS/style.css">
+    <link rel="stylesheet" type="text/css" href="/../SRM/CSS/Tutor.css">
 </head>
 <body>
     <div class="form-body">
         <div class="website-logo">
-            <a href="/srm/index.html">
+            <a href="/../SRM/index.html">
                 <div class="logo">
-                    <img class="logo" height="50" width="100" src="/images/logo.png" alt="">
+                    <img class="logo" height="50" width="100" src="/../SRM/Images/logo.png" alt="">
                 </div>
             </a>
         </div>
@@ -24,7 +22,7 @@
             <div class="img-holder">
                 <div class="bg"></div>
                 <div class="info-holder">
-                    <img src="images/graphic3.svg" alt="">
+                    <img src="/../SRM/Images/graphic3.svg" alt="">
                 </div>
             </div>
             <div class="form-holder">
@@ -33,25 +31,24 @@
                         <h3>Incredible platform for SRMIST</h3>
                         <p>Access to SRMIST Tutors only.</p>
                         <div class="page-links">
-                            <a href="/srm/Tutor-log.html" class="active">Login</a><a href="/srm/Tutor-reg.html">Register</a>
+                            <a href="/../SRM/Tutor/Tutor-log.html" class="active">Login</a><a href="/../SRM/Tutor/Tutor-reg.html">Register</a>
                         </div>
-                        <form>
-                            <input class="form-control" type="text" name="Username" placeholder="Register Number" required>
+                        <form method="POST" action="Log.php">
+                            <input class="form-control" type="text" name="Username" placeholder="Register Number"
+                                required>
                             <input class="form-control" type="password" name="password" placeholder="Password" required>
                             <div class="form-button">
-                                <button id="submit" type="submit" class="ibtn">Login</button> <a href="/srm/forget.html">Forget password?</a>
+                                <button id="submit" type="submit" class="ibtn">Login</button> <a href="/../SRM/Admins/forgot.html">Forget password?</a>
                             </div>
                         </form>
-                        
                     </div>
                 </div>
             </div>
         </div>
     </div>
-<script src="js/jquery.min.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/main.js"></script>
+    <script src="/../SRM/JS/bootstrap.min.js"></script>
+    <script src="/../SRM/JS/jquery.min.js"></script>
+    <script src="/../SRM/JS/main.js"></script>
+    <script src="/../SRM/JS/popper.min.js"></script>
 </body>
-
 </html>

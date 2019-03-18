@@ -1,7 +1,7 @@
 <?php
     $name = filter_input(INPUT_POST, 'name');
-    $regno = filter_input(INPUT_POST, 'RegNo');
-    $subject = filter_input(INPUT_POST, 'subject');
+    $regno = filter_input(INPUT_POST, 'Register_Number');
+    $subject = filter_input(INPUT_POST, 'sub');
     $mail = filter_input(INPUT_POST, 'email');
     $password = filter_input(INPUT_POST, 'password');
 
@@ -16,7 +16,7 @@
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "INSERT INTO tutreg VALUES('$name','$regno','$subject','$email','$password')";
+    $sql = "INSERT INTO tutor VALUES('$name','$regno','$subject','$email','$password')";
 
     if($conn->query($sql)){
          require_once("Tutor-log.html");
