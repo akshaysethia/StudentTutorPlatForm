@@ -36,7 +36,7 @@
 
         $sql = "SELECT regno FROM student WHERE name = 'name'";
 
-        $result = $$conn->query($sql);
+        $result = $conn->query($sql);
 
         if($result->num_rows>0){
             while($row = $result->fetch_assoc()) {
@@ -46,7 +46,7 @@
 
         $sql = "SELECT * FROM attendance WHERE regno = '$value'";
         
-        $result = $$conn->query($sql);
+        $result = $conn->query($sql);
 
         if($result->num_rows>0){
             while($row = $result->fetch_assoc()) {
