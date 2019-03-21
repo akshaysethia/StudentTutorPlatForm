@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/png" href="assets/img/favicon.ico">
@@ -25,7 +26,13 @@
     <div class="wrapper">
         <div class="sidebar" data-color="purple" data-image="">
             <?php
-                $tut = $_SESSION['var'];
+                if( isset( $_SESSION['var'] ) ) {
+                    $tut = $_SESSION['var'];
+                }
+                else {
+                    exit;
+                    require_once("Tutor-log.html");
+                }
             ?>
             <div class="sidebar-wrapper">
                 <div class="logo">
@@ -112,15 +119,15 @@
 
                         <ul class="nav navbar-nav navbar-right">
                             <li>
-                                <a href="">
+                                <a href="http://evarsity.srmuniv.ac.in/srmsip/" target="_blank">
                                     <p>Account</p>
                                 </a>
                             </li>
 
                             <li>
-                                <a href="#">
-                                    <p>Log out</p>
-                                </a>
+                                    <a href="/../SRM/Tutor/Tutor-log.html">
+                                        <form method="POST" action="logout.php"><p>Log out</p></form>
+                                    </a>
                             </li>
                             <li class="separator hidden-lg"></li>
                         </ul>
@@ -131,7 +138,8 @@
                 <div class="container-fluid">
                     <div class="row">
                         <h4 class="title" style="text-align: center;">Welcome to Student Tutor Portal</h4>
-                        <p class="category" style="text-align: center;"><?php echo $tut; ?>'s Dashboard</p>
+                        <p class="category" style="text-align: center;">
+                            <?php echo $tut; ?>'s Dashboard</p>
                     </div>
                 </div>
             </div>
@@ -183,5 +191,4 @@
 
     });
 </script>
-
 </html>

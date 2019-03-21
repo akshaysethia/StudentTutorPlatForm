@@ -15,21 +15,21 @@
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "SELECT name,password,sub FROM tutor WHERE regno='$name'";
+    $sql = "SELECT name,sub,password FROM tutor WHERE regno='$name'";
 
     $result = $conn->query($sql);
     
     if($result->num_rows>0) {
         while($row = $result->fetch_assoc()) {
             $tut = $row["name"];
-            $value = $row["password"];
-            $value1 = $row["sub"];
+            $value = $row["sub"];
+            $value1 = $row["password"];
         }
     }
 
-    if($pass == $value) {
+    if($pass == $value1) {
         $_SESSION['var'] = $tut;
-        $_SESSION['var1'] = $value1;
+        $_SESSION['var1'] = $value;
         require_once("index.html");
     }
     else {
