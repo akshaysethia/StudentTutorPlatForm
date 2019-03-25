@@ -19,6 +19,13 @@
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="http://herody.in/dash/tutor/assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
+   
+    <?php
+        $regno = $_SESSION['value'];
+        $max = $_SESSION['value1'];
+        $pre = $_SESSION['value2'];
+    ?>
+
 </head>
 <body>
     <div class="wrapper">
@@ -131,11 +138,11 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td><?php echo $value1; ?></td>
-                                                <td><?php echo $value2; ?></td>
-                                                <td><?php echo $value1-$value2; ?></td>
-                                                <td><?php echo ($value1/$value2)*100; ?></td>
-                                                <td><?php echo ($value1/$value2)*100; ?></td>
+                                                <td><?php echo $max; ?></td>
+                                                <td><?php echo $pre; ?></td>
+                                                <td><?php echo $max-$pre; ?></td>
+                                                <td><?php echo ($max/$pre*100); ?></td>
+                                                <td><?php echo ($max/$pre*100); ?></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -170,5 +177,4 @@
 <script src="http://herody.in/dash/tutor/assets/js/light-bootstrap-dashboard.js?v=1.4.0"></script>
 <!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
 <script src="http://herody.in/dash/tutor/assets/js/demo.js"></script>
-<script src="att.php"></script>
 </html>

@@ -42,5 +42,6 @@ $conn->close();
 $_SESSION['value'] = $value;
 $_SESSION['value1'] = $value1;
 $_SESSION['value2'] = $value2;
+require_once("attendance.html");
 
 ?>
