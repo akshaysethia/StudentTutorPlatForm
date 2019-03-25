@@ -1,8 +1,7 @@
 <?php
     $name = filter_input(INPUT_POST, 'username');
     $sub = "Password For SRM IST E-Tutor Platform";
-    $header = "From: SRM IST <bulbasaurisapokemon@gmail.com>\r\n"; 
-    $header .= "Reply-To: pikachuisapokemon@gmail.com\r\n";
+    $header = "From:akshaybhai98@gmail.com \r\n"; 
     $header .= "Content-type: text/html\r\n"; 
 
     $dbhost = "localhost";
@@ -22,10 +21,16 @@
 
     if(isset($sql)){
         $msg = "<h1>SRM Institute of Science and Technology</h1>\n\n<h3>Student E-Tutor Platform</h3>\nPassword: ".$sql;
-        mail($sql,$sub,$msg,$header);
-        echo "<script>alert('Password Send To The Email<br>Check It And Login Again');</script>";
-        sleep(10);
-        require_once("Student-log.html");
+        $retval = mail ($name, $sub, $msg, $$header);
+        if($retval == true){
+            echo "<script>alert('Password Send To The Email<br>Check It And Login Again');</script>";
+            sleep(10);
+            require_once("Student-log.html");
+        }
+        else {
+            echo "<script>alert('Error Sending Messages');</script>";
+            exit;
+        }
     }
     else {
         echo "No Such Email Is Present In The database<br>Either Try Again Or Register First";
