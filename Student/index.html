@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -23,6 +24,7 @@
 <body>
     <?php
         $name = $_SESSION['var'];
+        $_SESSION['var'] = $name;
     ?>
     <div class="wrapper">
         <div class="sidebar" data-color="purple" data-image="">

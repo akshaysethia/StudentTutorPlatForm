@@ -16,9 +16,7 @@
     }
 
     $sql = "SELECT name,password FROM student WHERE regno='$name'";
-
     $result = $conn->query($sql);
-    
     if($result->num_rows>0) {
         while($row = $result->fetch_assoc()) {
             $stud = $row["name"];
