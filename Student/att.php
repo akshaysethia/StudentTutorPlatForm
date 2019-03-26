@@ -1,7 +1,7 @@
-<?php session_start(); ?>
 <?php
-
-$name = $_SESSION['var'];
+session_name('Chutiya');
+session_start();
+$study = $_SESSION["studname"];
 $dbhost = "localhost";
 $dbname = "srm";
 $dbpass = "";
@@ -13,7 +13,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT regno FROM student WHERE name = '$name'";
+$sql = "SELECT regno FROM student WHERE name = '$study'";
 $result = $conn->query($sql);
 if (mysqli_num_rows($result) > 0) {
     while($row = mysqli_fetch_assoc($result)) {
@@ -34,9 +34,8 @@ if (mysqli_num_rows($result) > 0) {
 
 
 $conn->close();
-$_SESSION['value'] = $value;
-$_SESSION['value1'] = $value1;
-$_SESSION['value2'] = $value2;
-require_once("attendance.html");
+$_SESSION["value"] = $value;
+$_SESSION["value1"] = $value1;
+$_SESSION["value2"] = $value2;
 
 ?>

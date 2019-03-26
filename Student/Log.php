@@ -1,5 +1,7 @@
 <?php
+    session_name('Chutiya');
     session_start();
+    session_save_path();
     $name = filter_input(INPUT_POST, 'Username');
     $pass = filter_input(INPUT_POST, 'password');
     $shit = "Wrong Username Or Password";
@@ -25,7 +27,7 @@
     }
 
     if($pass == $value) {
-        $_SESSION['var'] = $stud;
+        $_SESSION["studname"] = $stud;
         require_once("index.html");
     }
     else {
